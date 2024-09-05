@@ -1,399 +1,232 @@
+<!-- Configuracion -->
+
+
+
 <!doctype html>
-<html>
+<html lang="es">
 
 <head>
-    <meta charset="utf-8" />
 
-    <title>Un ramo para ti</title>
-    <style>
-        body {
-            height: 100%;
-            width: 100%;
-            background: #080f1a;
-            overflow: hidden;
-        }
+    <!-- Head -->
+    <!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="invitaciones digitales para eventos">
+<meta name="keywords" content="invitaciones, digitales, tarjetas, boda, invitación, interactivas, casamiento, save the date, agenda la fecha, ideas invitación, tarjetas de 15, tarjetas eventos, wedding, matrimonio, ideas tarjetas, rsvp, modelos de invitacion, página de boda, página web de casamiento">
 
-        .container {
-            position: absolute;
-            left: 50%;
-            top: 30%;
-            transform: translate(-50%, -50%);
-        }
 
-        .glass {
-            height: 800px;
-            width: 600px;
-            background: #122139;
-            border-radius: 300px 300px 0px 0px;
-        }
+<!-- Listado de css con version dinamica segun modificacion de archivo -->
+<link rel='stylesheet' href='assets/css/bootstrap.min.css'/><link rel='stylesheet' href='assets/css/jquery.fancybox.min.css'/><link rel='stylesheet' href='assets/css/styles.css'/>
+<!-- Font -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;900&display=swap" rel="stylesheet">
 
-        .glass:before {
-            content: "";
-            height: 40px;
-            width: 40px;
-            transform-origin: center;
-            border: 25px solid #122139;
-            border-radius: 100%;
-            position: absolute;
-            left: 256px;
-            top: -74px;
-        }
 
-        .glass:after {
-            content: "";
-            position: absolute;
-            height: 15px;
-            width: 600px;
-            background: #a52a2a;
-            top: 100%;
-            left: 0%;
-        }
+<!-- Font Awesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
 
-        .shine {
-            width: 26px;
-            height: 330px;
-            background: white;
-            opacity: 0.2;
-            position: absolute;
-            left: 85%;
-            top: 200px;
-            border-radius: 100px;
-            z-index: 10;
-        }
+<!-- Title -->
+<title>
+  Estefi y Pablo</title>
 
-        .shine:before {
-            content: "";
-            width: 26px;
-            height: 40px;
-            position: absolute;
-            background: white;
-            top: 365px;
-            border-radius: 100px;
-        }
-
-        .petals>div {
-            position: absolute;
-            background: #d52d58;
-            width: 85px;
-            height: 120px;
-            top: 200px;
-            transition: all 0.5s ease-out;
-        }
-
-        .petals>div:nth-child(1) {
-            border-radius: 15px;
-            box-shadow: 0px 0px 60px rgba(245, 148, 184, 1);
-            left: 268px;
-            top: 200px;
-            background: #d52d58;
-        }
-
-        .petals>div:nth-child(2),
-        .petals>div:nth-child(4),
-        .petals>div:nth-child(6) {
-            background: #b81b43;
-            left: 230px;
-            border-radius: 0px 50px 0px 50px;
-            transform-origin: bottom right;
-        }
-
-        .petals>div:nth-child(3),
-        .petals>div:nth-child(5),
-        .petals>div:nth-child(7) {
-            background: #b81b43;
-            left: 300px;
-            border-radius: 50px 0px 50px 0px;
-            transform-origin: bottom left;
-        }
-
-        .petals>div:nth-child(2) {
-            z-index: 5;
-            background: #ab1a3f;
-            top: 218px;
-            height: 130px;
-            box-shadow: 0px 0px 60px rgba(245, 148, 184, .5);
-            animation: bloom2 3s ease-in-out;
-            animation-fill-mode: forwards;
-        }
-
-        .petals>div:nth-child(3) {
-            z-index: 4;
-            background: #ab1a3f;
-            top: 218px;
-            height: 130px;
-            box-shadow: 0px 0px 60px rgba(245, 148, 184, .5);
-            animation: bloom3 3s ease-in-out, glowing 2.5s ease-in-out infinite;
-            animation-fill-mode: forwards;
-        }
-
-        .petals>div:nth-child(4) {
-            z-index: 3;
-            background: #b81b43;
-            top: 213px;
-            height: 135px;
-            box-shadow: 0px 0px 60px rgba(245, 148, 184, .5);
-            animation: bloom4 3s ease-in-out, glowing 2.5s ease-in-out infinite;
-            animation-fill-mode: forwards;
-        }
-
-        .petals>div:nth-child(5) {
-            z-index: 2;
-            background: #b81b43;
-            top: 213px;
-            height: 135px;
-            box-shadow: 0px 0px 60px rgba(245, 148, 184, .5);
-            animation: bloom5 3s ease-in-out, glowing 2.5s ease-in-out infinite;
-            animation-fill-mode: forwards;
-        }
-
-        .petals>div:nth-child(6) {
-            z-index: 1;
-            background: #c9204b;
-            top: 200px;
-            height: 130px;
-            box-shadow: 0px 0px 60px rgba(245, 148, 184, .3);
-            animation: bloom6 3s ease-in-out, glowing 2.5s ease-in-out infinite;
-            animation-fill-mode: forwards;
-        }
-
-        .petals>div:nth-child(7) {
-            z-index: 0;
-            background: #c9204b;
-            top: 200px;
-            height: 130px;
-            box-shadow: 0px 0px 60px rgba(245, 148, 184, .3);
-            animation: bloom7 3s ease-in-out, glowing 2.5s ease-in-out infinite;
-            animation-fill-mode: forwards;
-        }
-
-        .deadPetals>div {
-            position: absolute;
-            background: #d52d58;
-            width: 20px;
-            height: 15px;
-            top: 200px;
-            border-radius: 0px 30px 0px 30px;
-            box-shadow: 0px 0px 30px rgba(245, 148, 184, .5);
-            transition: all 0.5s ease-out;
-        }
-
-        .deadPetals>div:nth-child(1) {
-            left: 119229959987px;
-            transform: rotate(-30deg);
-            animation: falling 20s 4s ease-in-out infinite;
-        }
-
-        .deadPetals>div:nth-child(2) {
-            left: 26331084746px;
-            transform: rotate(-30deg);
-            animation: falling 20s 8s ease-in-out infinite;
-        }
-
-        .deadPetals>div:nth-child(3) {
-            left: 129759500363px;
-            transform: rotate(-30deg);
-            animation: falling 20s 12s ease-in-out infinite;
-        }
-
-        .deadPetals>div:nth-child(4) {
-            left: 99323149959px;
-            transform: rotate(-30deg);
-            animation: falling 20s 16s ease-in-out infinite;
-        }
-
-        .leaves>div:nth-last-child(1) {
-            position: absolute;
-            width: 55px;
-            height: 30px;
-            background: #338f37;
-            top: 334px;
-            left: 278px;
-            border-radius: 100px;
-        }
-
-        .leaves>div:nth-child(1) {
-            position: absolute;
-            width: 15px;
-            height: 390px;
-            background: #054c05;
-            top: 308px;
-            left: 300px;
-            border-radius: 0 0 100px 100px;
-        }
-
-        .leaves>div:nth-child(2) {
-            position: absolute;
-            width: 60px;
-            height: 100px;
-            top: 53px;
-            border-radius: 10px 80px 40px 80px;
-            background: #054c05;
-            transform-origin: bottom;
-            transform: rotate(-30deg);
-            top: 412px;
-            left: 254px;
-            box-shadow: inset 10px 10px #066406;
-        }
-
-        .leaves>div:nth-child(3) {
-            position: absolute;
-            width: 60px;
-            height: 100px;
-            top: 53px;
-            border-radius: 80px 1px 80px 40px;
-            background: #054c05;
-            transform-origin: bottom;
-            transform: rotate(30deg);
-            top: 360px;
-            left: 300px;
-            box-shadow: inset -10px 10px #066406;
-        }
-
-        .thorns>div {
-            position: absolute;
-            width: 0;
-            height: 0;
-            top: 200px;
-        }
-
-        .thorns>div:nth-child(odd) {
-            border-top: 15px solid transparent;
-            border-bottom: 15px solid transparent;
-            border-left: 15px solid #054c05;
-            left: 315px;
-        }
-
-        .thorns>div:nth-child(even) {
-            border-top: 15px solid transparent;
-            border-bottom: 15px solid transparent;
-            border-right: 15px solid #054c05;
-            left: 285px;
-        }
-
-        .thorns>div:nth-child(1) {
-            top: 465px;
-        }
-
-        .thorns>div:nth-child(2) {
-            top: 390px;
-        }
-
-        .thorns>div:nth-child(4) {
-            top: 525px;
-        }
-
-        @keyframes bloom2 {
-            50% {
-                transform: rotate(-90deg);
-                top: 400px;
-                left: 150px;
-            }
-
-            100% {
-                transform: rotate(-60deg);
-                top: 615px;
-                left: 100px;
-                background: #71122a;
-                box-shadow: 0px 0px 0px rgba(245, 148, 184, 0);
-            }
-        }
-
-        @keyframes bloom3 {
-            100% {
-                transform: rotate(50deg);
-            }
-        }
-
-        @keyframes bloom4 {
-            100% {
-                transform: rotate(-25deg);
-            }
-        }
-
-        @keyframes bloom5 {
-            100% {
-                transform: rotate(25deg);
-            }
-        }
-
-        @keyframes bloom6 {
-            100% {
-                transform: rotate(-10deg);
-            }
-        }
-
-        @keyframes bloom7 {
-            100% {
-                transform: rotate(10deg);
-            }
-        }
-
-        @keyframes glowing {
-            50% {
-                background: #d7365f;
-                box-shadow: 0px 0px 60px rgba(245, 148, 184, 1);
-            }
-        }
-
-        @keyframes falling {
-            20% {
-                top: 335px;
-                background: #9d193b;
-                box-shadow: 0px 0px 0px rgba(245, 148, 184, 0);
-            }
-
-            100% {
-                top: 335px;
-                opacity: 0;
-            }
-        }
-
-        .texto {
-            top: 50%;
-            color: white;
-            font-size: 35px;
-            position: absolute;
-            left: 10%;
-        }
-    </style>
 </head>
 
+
+
 <body>
+  <!-- <div class="parallax-mirror" style="visibility: visible; z-index: -100; position: fixed; top: 0px; left: 0px; overflow: hidden; transform: translate3d(0px, 0px, 0px); height: 944px; width: 821px;"><img class="parallax-slider" src="assets/img/portada.jpg" style="transform: translate3d(-429px, 0px, 0px); position: absolute; height: 944px; width: 1679px; max-width: none;"></div>
+  <div class="parallax-mirror" style="visibility: hidden; z-index: -100; position: fixed; top: 0px; left: 0px; overflow: hidden; height: 600px; width: 821px; transform: translate3d(0px, 888px, 0px);"><img class="parallax-slider" src="assets/img/portada.jpg" style="position: absolute; height: 875px; width: 1556px; max-width: none; transform: translate3d(-367px, -744.4px, 0px);"></div> -->
+
+    <!-- Audio -->    <section class="audio">
     <div class="container">
-        <div class="glass">
-            <div class="shine"></div>
-        </div>
-        <div class="thorns">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-        <div class="leaves">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-        <div class="petals">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-        <div class="deadPetals">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
+        <div class="row">
+            <div class="botonAudio-container">
+                <audio id="audioPrueba" loop>
+                    <source src="assets/musica.mp3" type="audio/mp3">
+                    ¡Ups! Tu navegador no soporta este archivo de audio.
+                </audio>
+                <div class='animation'>
+                    <img id="btnPlay" src="assets/img/icono-musica_play.svg" alt="boton play" onclick="playAudio()"
+                        class="botonAudio vertical_shake">
+
+                    <img id="btnPausa" src="assets/img/icono-musica_pausa.svg" class="botonAudio hidden"
+                        onclick="pauseAudio()" alt="boton pausa">
+                </div>
+            </div>
         </div>
     </div>
-    <div>
-        <h4 class="texto">Mi amor por ti durará hasta que caiga el último pétalo ❤️</h>
+</section>
+    <!-- Portada -->
+    <!-- Portada -->
+<section class="portada parallax-portada d-flex justify-content-center align-items-end" style="background-image: url('assets/img/portada.jpg');">
+
+  <!-- Logo central -->
+  <div class="logo-portada">
+    <img class="" src="assets/img/logo-portada.png" style="max-width: 200px;"alt="">
+    <div class="scroll-down"></div>
+  </div>
+
+</section>
+
+    <!-- Cuenta Regresiva -->
+    <section class="cuenta-regresiva" id="cuenta-regresiva">
+  <div class="container">
+    <!-- Contenedor de cuenta regresiva -->
+    <p class="m-3">Nuestro aniversario</p>
+    <p id="reloj" class="descartar">¡Hoy es el gran día!</p>
+    <div class="row justify-content-center margenSup" id="reloj_number">
+      <div class="col-md-1 col-2 d-flex flex-column justify-content-center p-0">
+        <p class="num_cuenta" id="dias"></p>
+        <p class="text_cuenta">días</p>
+      </div>
+      <p class="num_cuenta">:</p>
+      <div class="col-md-1 col-2 d-flex flex-column justify-content-center p-0">
+        <p class="num_cuenta" id="horas"></p>
+        <p class="text_cuenta">hs</p>
+      </div>
+      <p class="num_cuenta">:</p>
+      <div class="col-md-1 col-2 d-flex flex-column justify-content-center p-0">
+        <p class="num_cuenta" id="min"></p>
+        <p class="text_cuenta">min</p>
+      </div>
+      <p class="num_cuenta">:</p>
+      <div class="col-md-1 col-2 d-flex flex-column justify-content-center p-0">
+        <p class="num_cuenta" id="seg"></p>
+        <p class="text_cuenta">seg</p>
+      </div>
     </div>
+  </div>
+</section>
+
+    <!-- Ceremonia y Fiesta -->
+    <section class="ceremonia-fiesta mb-5">
+  <div class="container">
+    <div class="row">
+                      <!-- Icono -->
+        <!-- <div class="col-md-12 columna">
+          <img src="assets/img/icono-anillos.svg" alt="" class="icon anillos">
+        </div> -->
+        <!-- Texto -->
+       
+      
+    </div>
+  </div>
+</section>
+
+
+    <!-- Galeria -->
+    <section class="galeria">
+  <div class="container">
+    <h4 class="title-galery">NOSOTROS...</h4>
+    <div class="row">
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+        <!-- Impmrimo el bloque con la imagen -->
+          <div class="col-6 col-md-3 item-galeria animated opacidad">
+            <a href="assets/img/galeria/1.jpg" data-fancybox="images" data-caption="">
+              <img class="img-fluid" src="assets/img/galeria/1.jpg" alt="">
+            </a>
+          </div>
+      
+      
+        <!-- Impmrimo el bloque con la imagen -->
+          <div class="col-6 col-md-3 item-galeria animated opacidad">
+            <a href="assets/img/galeria/2.jpg" data-fancybox="images" data-caption="">
+              <img class="img-fluid" src="assets/img/galeria/2.jpg" alt="">
+            </a>
+          </div>
+      
+      
+        <!-- Impmrimo el bloque con la imagen -->
+          <div class="col-6 col-md-3 item-galeria animated opacidad">
+            <a href="assets/img/galeria/3.jpg" data-fancybox="images" data-caption="">
+              <img class="img-fluid" src="assets/img/galeria/3.jpg" alt="">
+            </a>
+          </div>
+      
+      
+        <!-- Impmrimo el bloque con la imagen -->
+          <div class="col-6 col-md-3 item-galeria animated opacidad">
+            <a href="assets/img/galeria/4.jpg" data-fancybox="images" data-caption="">
+              <img class="img-fluid" src="assets/img/galeria/4.jpg" alt="">
+            </a>
+          </div>
+      
+      
+        <!-- Impmrimo el bloque con la imagen -->
+          <div class="col-6 col-md-3 item-galeria animated opacidad">
+            <a href="assets/img/galeria/5.jpg" data-fancybox="images" data-caption="">
+              <img class="img-fluid" src="assets/img/galeria/5.jpg" alt="">
+            </a>
+          </div>
+      
+      
+        <!-- Impmrimo el bloque con la imagen -->
+          <div class="col-6 col-md-3 item-galeria animated opacidad">
+            <a href="assets/img/galeria/6.jpg" data-fancybox="images" data-caption="">
+              <img class="img-fluid" src="assets/img/galeria/6.jpg" alt="">
+            </a>
+          </div>
+      
+      
+        <!-- Impmrimo el bloque con la imagen -->
+          <div class="col-6 col-md-3 item-galeria animated opacidad">
+            <a href="assets/img/galeria/7.jpg" data-fancybox="images" data-caption="">
+              <img class="img-fluid" src="assets/img/galeria/7.jpg" alt="">
+            </a>
+          </div>
+      
+      
+        <!-- Impmrimo el bloque con la imagen -->
+          <div class="col-6 col-md-3 item-galeria animated opacidad">
+            <a href="assets/img/galeria/8.jpg" data-fancybox="images" data-caption="">
+              <img class="img-fluid" src="assets/img/galeria/8.jpg" alt="">
+            </a>
+          </div>
+      
+      
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+    <!-- Varaibles para JS desde config -->
+    <script>
+    // Cuenta regresiva
+    var fechaCuentaRegresiva = "07/05/2024 00:00:00";
+
+    // Datos para Agenda
+    var fechaInicioEvento = "06/05/2024 00:00:00";
+    var fechaFinEvento = "06/05/2024 23:59:00";
+    var tituloEvento = "Aniversario Vale y Mati";
+    </script>
+
+
+    <!-- Scripts Generales-->
+    <!-- Listado de js con version dinamica segun modificacion de archivo -->
+<script type='text/javascript' src='assets/js/jquery-3.5.1.slim.min.js'></script><script type='text/javascript' src='assets/js/popper.min.js'></script><script type='text/javascript' src='assets/js/bootstrap.min.js'></script><script type='text/javascript' src='assets/js/parallax.min.js'></script><script type='text/javascript' src='assets/js/jquery.fancybox.min.js'></script><script type='text/javascript' src='assets/js/scripts.js'></script>
+
+
+
 </body>
 
 </html>
